@@ -14,6 +14,11 @@ public class StringFunctions {
 
     public static final String reverseWithStringConcat(String string) {
         String output = new String();
+
+        if(string==null || string.isEmpty()){  //added in a change such that it handles the null case and if it is empty 
+            return "";
+        }
+
         for (int i = (string.length() - 1); i >= 0; i--) {
             output += (string.charAt(i));
         }
@@ -22,6 +27,11 @@ public class StringFunctions {
 
     public static final String reverseWithStringBuilder(String string) {
         final StringBuilder builder = new StringBuilder();
+
+        if (string == null || string.isEmpty()) {
+            return "";  // Return empty string if input is null or if it is empty
+        }
+        
         for (int i = (string.length() - 1); i >= 0; i--) {
             builder.append(string.charAt(i));
         }
